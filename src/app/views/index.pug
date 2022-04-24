@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1= title
+  form(action='/notification', method='POST')
+    p 
+      | id: 
+      input(type='text', name='id', value='')
+      | title: 
+      input(type='text', name='title', value='')
+      |          message: 
+      input(type='text', name='message', value='')
+      |          userId: 
+      input(type='text', name='userId', value='')
+      |          phone: 
+      input(type='tel', name='phone', value='')
+      |         medium
+      select(name='medium')
+        each medium in mediums
+          option(value=medium) #{medium}
+    input(type='submit', value='Submit')
